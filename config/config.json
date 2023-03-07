@@ -1,0 +1,60 @@
+{
+    "id": "jellyfish-source",
+    "storageBackends": [
+        {
+            "dataset": "ocean.jellyfish",
+            "storageType": "localstorage",
+            "storeDeleted": false,
+            "stripProps": false,
+            "csv": {
+                "header": true,
+                "encoding": "UTF-8",
+                "separator": ";",
+                "order": [],
+                "validatefields": false,
+                "skiprows": 0
+            },
+            "localfileconfig": {
+                "rootfolder": "/csv",
+                "filesuffix": ".csv"
+            },
+            "decode": {
+                "idProperty": "Report ID",
+                "defaultNamespace": "jf",
+                "namespaces": {
+                    "_": "http://ocean.data.example.org/jellyfish/reports/",
+                    "jf": "http://ocean.data.example.org/jellyfish/",
+                    "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+                    "flatgeo" : "http://data.mimiro.io/models/flatgeo/"
+                },
+                "propertyPrefixes": {
+                    "bbox" : "flatgeo",
+                    "coordinates" : "flatgeo",
+                    "geotype" : "flatgeo:flatgeo",
+                    "type" : "rdf:flatgeo"
+                },
+                "columnMappings": {
+                    "bounding" : "bbox"
+                },
+                "columnTypes" : {
+                    "bbox" : "float",  
+                    "coordinates" : "float" 
+                },
+                "columnConcats" : {
+                    "coordinates" : ["Lat.", "Long."]
+                },
+                "listValueColumns" : {
+                    "bbox" : ",",
+                    "coordinates" : ","
+                },
+                "defaults" : {
+                    "type" : "Feature",
+                    "geotype" : "Point"
+                },
+                "refs": [
+                    "type", "geotype"
+                ]
+            }
+        }
+    ]
+}

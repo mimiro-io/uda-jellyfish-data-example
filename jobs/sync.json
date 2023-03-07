@@ -1,0 +1,19 @@
+{
+    "id" : "load-jellyfish-data",
+    "title" : "Load Jellyfish Data from CSV",
+    "type": "job",
+    "triggers": [ {
+            "triggerType": "cron",
+            "jobType": "fullsync",
+            "schedule": "@every 5m"
+    } ],
+    "source": {
+        "Type": "HttpDatasetSource",
+        "Url": "http://jellyfish:4344/datasets/ocean.jellyfish/entities"
+    },
+    "sink": {
+        "Type": "DatasetSink",
+        "Name": "ocean.jellyfish"
+    }
+}
+
