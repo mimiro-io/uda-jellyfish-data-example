@@ -21,7 +21,7 @@ docker-compose up -d
 * Connect mim to this datahub instance
 
 ```
-mim login add --alias "dh1" --type=user --server="http://localhost:4242"
+mim login add --alias "dh1" --type=unsecured --server="http://localhost:4242"
 mim login dh1
 mim datasets ls
 ```
